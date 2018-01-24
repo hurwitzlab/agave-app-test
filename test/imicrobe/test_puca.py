@@ -43,17 +43,15 @@ def test_puca():
     job_status_url = 'https://agave.iplantc.org/jobs/v2/{}/status'.format(job_id)
 
     job_status = None
-    for i in range(20):
+    while not (job_status == 'FINISHED' or job_status == 'FAILED'):
         job_status_response = oauth.get(url=job_status_url)
         job_status = job_status_response.json()['result']['status']
 
         print(job_status)
-        if job_status == 'FINISHED':
-            break
-        else:
-            print('sleeping 60 seconds')
-            for j in range(6):
-                sys.stdout.write('.')
-                time.sleep(10)
+
+        sys.stdout('sleeping 60 seconds')
+        for j in range(6):
+            sys.stdout.write('.')
+            time.sleep(10)
 
     assert job_status == 'FINISHED'
