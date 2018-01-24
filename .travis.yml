@@ -10,7 +10,7 @@ install:
   - cd /home/travis/build/hurwitzlab/agave-app-test
   - pip install -r requirements.txt
 script:
-  - travis_wait pytest -s
+  - travis_wait 30 pytest -s
   - pwd
   - ls -l
 env:
