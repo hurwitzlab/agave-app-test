@@ -11,8 +11,6 @@ from requests_oauthlib import OAuth2Session
 def test_puca():
     # grab client_id and client_secret:
     client_id, client_secret = os.environ['AGAVE_CREDENTIALS'].split(':')
-    print(client_id)
-    print(client_secret)
     token_url = 'https://agave.iplantc.org/token'
 
     # generate HTTPBasicAuth Header
@@ -22,7 +20,6 @@ def test_puca():
     # start oauth session
     oauth = OAuth2Session(client=client)
     token = oauth.fetch_token(token_url=token_url, auth=basic_auth)
-    print(token)
 
     # submit a job
     job_json = json.loads("""\
