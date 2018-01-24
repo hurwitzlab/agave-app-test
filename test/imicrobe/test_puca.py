@@ -49,7 +49,7 @@ def test_puca():
 
         print(job_status)
 
-        sys.stdout('sleeping 60 seconds')
+        sys.stdout.write('sleeping 60 seconds')
         for j in range(6):
             sys.stdout.write('.')
             time.sleep(10)
