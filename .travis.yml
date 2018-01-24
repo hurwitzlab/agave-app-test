@@ -1,18 +1,18 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
 sudo: required
 dist: trusty
 before_install:
-- pwd
+  - pwd
 install:
-- pwd
-- cd /home/travis/build/hurwitzlab/agave-app-test
-- pip install -r requirements.txt
+  - pwd
+  - cd /home/travis/build/hurwitzlab/agave-app-test
+  - pip install -r requirements.txt
 script:
-- pytest
-- pwd
-- ls -l
+  - pytest
+  - pwd
+  - ls -l
 env:
   global:
     secure: dPLE2W9gM+7eU+mFJccQniC/9QxyVgGu1YiwYW7uLlBD9LcNY5iCCTcpjKUkl9nBO1qK0kjQaYFmIB+/TKtLGqdiXzZM2XKFNTW8RtonUtKQSJFeWZpZv3mY2pjCSl4X+qOGqmw4u9Lgk9VhTxH7S5aK9ta8cBxeFDGdadOsHOwgRlsCmjOEPj6EQWfw6fIeF0vfrGqTnpqmcDECICiyW+nqQpXoaYJ5a90QTc3/3Trke7OWf6OzuAmxBATCwpywdReNTBYXeh2d/5V/5yXUuMT1YBALCaLFqGGh5/87V9mpRF4X+OIS7vX9skTM9ktLB4+aCU3qT3v1Y4Aqy6hsRCdCVdUBBhtnqjkWOSoX2K2QKt2PHhyXW5hPobB73pA9KMoRW1+4tkZTbTNZF7pnsukRrUs1sQKVrFFBICUurCVnQ2qomM64u5Y7bHu997V5FjobEq4Oin3O5dkB9OwXR7ejjP4j+l3hNd142wPThFLzA4NmJKMuXSxiwXQQVSEdNzBiriFV+NiOeCjN9npl5iWXsmkI5reyXZ4RHNwjqeG/4w819AO2osjuvAnznJUz9bq/FDkilbEA+EDh4JuqIPEZH7lxrknoVAo/gUNwT7jZRTfJgbGVdcGvXqOTUNH1CC+HbeWBbWMopi17fDvAakoo3i1QJO4kLoaYndOiUxw=
