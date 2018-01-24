@@ -20,7 +20,7 @@ jklynch@minty agave-app-test $ travis encrypt AGAVE_CREDENTIALS=<api key>:<api s
 jklynch@minty agave-app-test $ travis encrypt hurwitzlab:<Slack notification token>
 ```
 
-The encrypted Slack notification has to be added to `.travis.yml` manually. The `.travis.yml` file
+The encrypted Slack notification token has to be added to `.travis.yml` manually. The `.travis.yml` file
 should include this:
 
 ```
