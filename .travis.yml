@@ -10,7 +10,9 @@ install:
   - cd /home/travis/build/hurwitzlab/agave-app-test
   - pip install -r requirements.txt
 script:
-  - robot --outputdir robotframework/imicrobe/logs/ robotframework/imicrobe
+  - cd robotframework/imicrobe
+  - ./run_tests.sh
+  - cd ../..
   - travis_wait 30 pytest -s -n 4
   - pwd
   - ls -l
