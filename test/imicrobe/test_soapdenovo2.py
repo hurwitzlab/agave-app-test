@@ -2,11 +2,10 @@ import json
 
 import pytest
 
-from test import wait_for_job_to_finish
+from test import submit_job, wait_for_job_to_finish
 
 
 def test_soapdenovo2_private(cyverse_oauth_session):
-    # submit a job
     job_json = json.loads("""\
         {
           "name": "imicrobe-soapdenovo2-test",
@@ -23,8 +22,9 @@ def test_soapdenovo2_private(cyverse_oauth_session):
         }
     """)
 
-    submit_job_response = cyverse_oauth_session.post(
-        url='https://agave.iplantc.org/jobs/v2?pretty=true', json=job_json)
+    submit_job_response = submit_job(
+        cyverse_oauth_session=cyverse_oauth_session,
+        job_json=job_json)
     print(submit_job_response.json())
 
     job_status = wait_for_job_to_finish(
