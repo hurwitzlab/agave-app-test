@@ -2,6 +2,12 @@ import sys
 import time
 
 
+def submit_job(cyverse_oauth_session, job_json):
+    submit_job_response = cyverse_oauth_session.post(
+        url='https://agave.iplantc.org/jobs/v2?pretty=true',
+        json=job_json)
+    return submit_job_response
+
 def wait_for_job_to_finish(job_id, cyverse_oauth_session):
     job_status_url = 'https://agave.iplantc.org/jobs/v2/{}/status'.format(job_id)
 
