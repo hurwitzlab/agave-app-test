@@ -1,0 +1,11 @@
+{
+	"name": "ohana-blast-test",
+	"appId": "ohana-blast-0.0.8",
+	"archive": true,
+	"inputs": {
+		"QUERY": "/mbomhoff/pov_test/POV_GD.Spr.C.8m_reads.fa"
+	},
+	"parameters": {
+		"PCT_ID": ".98"
+	}
+}
