@@ -1,6 +1,5 @@
 # -*- coding: robot -*-
 *** Settings ***
-Library		HttpLibrary.HTTP
 Documentation	blah blah blah
 ...		blah blah blah
 Resource	resource.robot
@@ -17,11 +16,13 @@ Submit App
 	...     "appId": "ohana-blast-0.0.8",
 	...     "archive": true,
 	...     "inputs": {
-	...         "QUERY": "agave://data.iplantcollaborative.org/mbomhoff/pov_test/POV_GD.Spr.C.8m_reads.fa" 
-	...     }
+	...	    "QUERY": "/mbomhoff/pov_test/POV_GD.Spr.C.8m_reads.fa" 
+	...     },
+	...	"parameters": {
+	...	    "PCT_ID": ".98"
 	...	}
-	Should Be Valid JSON	${document}
-	${content}=	Parse Json	${document}
+	...	}
+	${content}=    evaluate    json.loads('''${document}''')    json
 	Log	${content}	console=yes
 	${headers}=    Create Dictionary       Authorization=Bearer ${AUTH_TOKEN}
 	${resp}=	Post Request	agave	${JOBS}	data=${content}	headers=${headers}

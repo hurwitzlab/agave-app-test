@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-robot --outputdir ../../web/test .
+robot --outputdir ./logs/ .
