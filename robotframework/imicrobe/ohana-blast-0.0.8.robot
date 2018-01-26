@@ -23,9 +23,10 @@ Submit App
 	...	}
 	...	}
 	${content}=    evaluate    json.loads('''${document}''')    json
-	Log	${content}	console=yes
-	${headers}=    Create Dictionary       Authorization=Bearer ${AUTH_TOKEN}
+	${headers}=    Create Dictionary       Content-Type=application/json	Authorization=Bearer ${AUTH_TOKEN}
 	${resp}=	Post Request	agave	${JOBS}	data=${content}	headers=${headers}
 	Log     ${resp.json()}      console=yes
 	Should Be Equal As Strings	${resp.status_code}	201
-	Dictionary Should Contain Item  ${resp.json()}  status	"success"	
+	Dictionary Should Contain Item  ${resp.json()}  status	success	
+	${id}=	Get From Dictionary   ${resp.json()["result"]}  id 
+	Log	"Job ID:" ${id}	console=yes
