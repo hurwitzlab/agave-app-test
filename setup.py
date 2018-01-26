@@ -68,7 +68,10 @@ setup(
         'pytest-xdist',
         'oauthlib',
         'requests',
-        'requests_oauthlib'
+        'requests_oauthlib',
+        'robotframework',
+        'robotframework-requests',
+        'robotframework-jsonlibrary'
     ],
 
     # List additional groups of dependencies here (e.g. development
