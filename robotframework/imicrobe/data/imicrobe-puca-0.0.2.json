@@ -1,0 +1,12 @@
+{
+  "name": "imicrobe-puca-test",
+  "appId": "imicrobe-puca-0.0.2",
+  "archive": true,
+  "inputs": {
+	"inputDir": "jklynch/test/imicrobe-puca"
+  },
+  "parameters": {
+	"BC_NAME": "samtools_1.6--0.img",
+	"CMD_LINE": "samtools quickcheck -v imicrobe-puca/test.bam"
+  }
+}
