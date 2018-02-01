@@ -18,4 +18,4 @@ imicrobe puca
     Should Be Equal As Strings      ${resp.status_code}    201
     Dictionary Should Contain Item  ${resp.json()}         status  success
 	Log Many                        ${resp.text}
-	wait for job to finish          ${id}
+	Wait For Job To Finish          ${id}
