@@ -1,0 +1,8 @@
+{
+  "name": "test imicrobe-prokka-0.0.2u1",
+  "appId": "imicrobe-prokka-0.0.2u1",
+  "archive": true,
+  "inputs": {
+    "INPUT_FILE": "agave://data.iplantcollaborative.org/shared/imicrobe/test/apps/imicrobe-prokka/test.fa"
+  }
+}

@@ -7,6 +7,8 @@ import requests.auth
 import oauthlib.oauth2
 import requests_oauthlib
 
+from robot.api import logger
+
 
 class agave_library():
 
@@ -45,15 +47,15 @@ class agave_library():
 
         job_status_response = self._oauth.get(url=job_status_url)
         job_status = job_status_response.json()['result']['status']
-        print(job_status)
+        logger.console(job_status + ' ' + job_id)
         while not (job_status == 'FINISHED' or job_status == 'FAILED'):
-            sys.stdout.write('sleeping 60 seconds')
-            for j in range(6):
-                sys.stdout.write('.')
-                time.sleep(10)
+            logger.console('sleeping 60 seconds')
+            for j in range(3):
+                logger.console('.')
+                time.sleep(20)
             job_status_response = self._oauth.get(url=job_status_url)
             job_status = job_status_response.json()['result']['status']
 
-            print(job_status)
+            logger.console(job_status + ' ' + job_id)
 
         return job_status

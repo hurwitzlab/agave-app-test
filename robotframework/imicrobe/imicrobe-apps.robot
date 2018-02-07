@@ -9,8 +9,16 @@ Resource	resource.robot
 *** Test Cases ***
 Test Those Apps
     [Template]  Test Agave App
+    ./data/imicrobe-megahit-0.0.2.json
+    ./data/imicrobe-megahit-0.0.2u1.json
+    ./data/imicrobe-prokka-0.0.2.json
+    ./data/imicrobe-prokka-0.0.2u1.json
     ./data/imicrobe-puca-0.0.2.json
+    ./data/imicrobe-puca-0.0.2u1.json
+    ./data/imicrobe-soapdenovo2-0.0.3.json
+    ./data/imicrobe-soapdenovo2-0.0.3u1.json
     ./data/ohana-blast-0.0.8.json
+    ./data/ohana-blast-0.0.8u1.json
 
 *** Keywords ***
 Test Agave App
