@@ -77,10 +77,10 @@ setup(
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
     # for example:
-    # $ pip install -e .[dev,test]
+    # $ pip install -e .[dev,agave_app_test]
     extras_require={
         'dev': [],
-        'test': [],
+        'agave_app_test': [],
     },
 
     # If there are data files included in your packages that need to be

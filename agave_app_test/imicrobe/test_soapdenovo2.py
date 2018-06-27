@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from test import submit_job, wait_for_job_to_finish
+from agave_app_test import submit_job, wait_for_job_to_finish
 
 
 def test_soapdenovo2_private(cyverse_oauth_session):
@@ -12,7 +12,7 @@ def test_soapdenovo2_private(cyverse_oauth_session):
           "appId": "imicrobe-soapdenovo2-0.0.3",
           "archive": true,
           "inputs": {
-            "CONFIG_FILE": "jklynch/test/imicrobe-soapdenovo2/test.config",
+            "CONFIG_FILE": "jklynch/agave_app_test/imicrobe-soapdenovo2/test.config",
             "FORWARD_FQ": "shared/iplant_training/genome_assembly_soapdenovo/A_Assemble_Reads/fragScSi_1.fq",
             "REVERSE_FQ": "shared/iplant_training/genome_assembly_soapdenovo/A_Assemble_Reads/fragScSi_2.fq"
           },

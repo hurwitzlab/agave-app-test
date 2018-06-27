@@ -2,20 +2,19 @@ import json
 
 import pytest
 
-from test import submit_job, wait_for_job_to_finish
+from agave_app_test import submit_job, wait_for_job_to_finish
 
 
-def test_muscope_last_private(cyverse_oauth_session):
+def test_ohana_blast_private(cyverse_oauth_session):
     job_json = json.loads("""\
         {
-          "name": "muscope-last-test",
-          "appId": "muscope-last-0.0.3",
+          "name": "ohana-blast-test",
+          "appId": "ohana-blast-0.0.8",
           "archive": true,
           "inputs": {
-            "QUERY": "agave://data.iplantcollaborative.org/jklynch/data/muscope/last/test.fa"
+            "QUERY": "agave://data.iplantcollaborative.org/jklynch/data/muscope/blast/test.fa"
           },
           "parameter": {
-            "USE_TEST_DB": true
           }
         }
     """)
